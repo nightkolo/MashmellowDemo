@@ -12,12 +12,20 @@ extends CollisionShape2D
 @export var mashed_object_1x2: PackedScene
 
 @onready var block_detect: BlockDetector = $BlockDetect
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite_node: Node2D = $SpriteNode
+@onready var sprite: Sprite2D = $SpriteNode/Sprite2D
 @onready var block: MashBlock = $MashBlock
 
 var parent_player: Player
 
 var _original_pos: Vector2
+
+
+func is_on_ground() -> bool:
+	block_detect.down_ray.force_raycast_update()
+	print(block_detect.down_ray)
+	print(block_detect.down_ray.is_colliding())
+	return block_detect.down_ray.is_colliding()
 
 
 func _ready() -> void:

@@ -1,6 +1,8 @@
 extends Node2D
 class_name BlockDetector
 
+@onready var down_ray: RayCast2D = $DownG
+
 var rays: Array[RayCast2D]
 var cherry_bomb_rays: Array[RayCast2D]
 var parent_block: Mashed

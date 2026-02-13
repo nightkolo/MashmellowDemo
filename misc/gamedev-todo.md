@@ -23,6 +23,7 @@
   - [ ] Unmashable highlighter
   - [ ] Mashed/Unmashed state
   - [ ] Animations (Tweens, on Demo)
+    - [ ] Test out
 
 ### Assets and Design (64/128 Block size)
 - [ ] NPC, design, dialog

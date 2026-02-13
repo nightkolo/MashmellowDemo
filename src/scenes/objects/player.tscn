@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b56yygeh2dlui" path="res://scripts/objects/player.gd" id="1_a8lix"]
 [ext_resource type="PackedScene" uid="uid://bt15qcfnm63xf" path="res://scenes/objects/block_mashed_1x1.tscn" id="2_2147m"]
+[ext_resource type="Script" uid="uid://so163641iedd" path="res://scripts/components/component_marshmellow_animation.gd" id="3_h5uus"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1691389058]
 collision_layer = 2
@@ -21,3 +22,6 @@ one_shot = true
 
 [node name="CherryBombAirTimer" type="Timer" parent="." unique_id=1702203392]
 one_shot = true
+
+[node name="MarshmellowAnimationComponent" type="Node" parent="." unique_id=896765118]
+script = ExtResource("3_h5uus")

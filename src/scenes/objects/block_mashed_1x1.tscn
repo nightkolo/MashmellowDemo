@@ -13,7 +13,11 @@ shape = ExtResource("1_32g1q")
 script = ExtResource("2_lydfl")
 metadata/_custom_type_script = "uid://bgc37b0mpxwv3"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=678643639]
+[node name="SpriteNode" type="Node2D" parent="." unique_id=1755599335]
+position = Vector2(0, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteNode" unique_id=678643639]
+position = Vector2(0, -32)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_7kr8c")
 
