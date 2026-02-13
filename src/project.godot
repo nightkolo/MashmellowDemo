@@ -10,9 +10,23 @@ config_version=5
 
 [application]
 
-config/name="MashmellowDemo"
+config/name="MashmallowsDemo"
+config/version="Fetus"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameLogic="*uid://cpj5k3pjtv4v2"
+GameMgr="*uid://do5s7j3sonrxq"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=800
+window/size/window_width_override=1920
+window/size/window_height_override=1200
+window/stretch/mode="canvas_items"
 
 [physics]
 

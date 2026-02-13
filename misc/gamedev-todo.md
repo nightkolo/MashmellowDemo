@@ -4,10 +4,10 @@
 
 ### Set up
 
-- [ ] Set-up directories (assets, audio, core, scenes/object, scripts, resources)
-- [ ] Paste assets
-- [ ] Set-up project.godot
-- [ ] Paste prototype code
+- [x] Set-up directories (assets, audio, core, scenes/object, scripts, resources)
+- [x] Paste assets
+- [x] Set-up project.godot
+- [x] Paste prototype code
 - [ ] Set up test map
 - [ ] Rework sizing
 
