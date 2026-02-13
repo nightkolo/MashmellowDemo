@@ -54,10 +54,10 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pick"):
+	if event.is_action_pressed("move_mash"):
 		mash_child_blocks()
 	
-	if event.is_action_pressed("drop"):
+	if event.is_action_pressed("move_unmash"):
 		unmash()
 
 
@@ -206,7 +206,8 @@ var but_is_unmashable: bool = false
 
 
 func _state() -> void:
-	print(can_mash())
+	#print(can_mash())
+	pass
 
 
 func _animate() -> void:

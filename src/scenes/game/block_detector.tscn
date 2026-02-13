@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://krw76abox8r3"]
+
+[ext_resource type="Script" uid="uid://blm45b8q7uqt5" path="res://scripts/objects/block_detector.gd" id="1_ealfv"]
+
+[node name="BlockDetect" type="Node2D" unique_id=2042283883]
+script = ExtResource("1_ealfv")
+metadata/_custom_type_script = "uid://blm45b8q7uqt5"
+
+[node name="Right" type="RayCast2D" parent="." unique_id=409331326]
+target_position = Vector2(33, 0)
+collision_mask = 8
+
+[node name="Left" type="RayCast2D" parent="." unique_id=1079650675]
+target_position = Vector2(-33, 0)
+collision_mask = 8
+
+[node name="Right2" type="RayCast2D" parent="." unique_id=1037801714]
+visible = false
+position = Vector2(0, -64)
+target_position = Vector2(33, 0)
+collision_mask = 8
+
+[node name="Left2" type="RayCast2D" parent="." unique_id=1695914218]
+visible = false
+position = Vector2(0, -64)
+target_position = Vector2(-33, 0)
+collision_mask = 8
+
+[node name="Down" type="RayCast2D" parent="." unique_id=553699482]
+target_position = Vector2(0, 33)
+collision_mask = 8
+
+[node name="CherryBombRays" type="Node2D" parent="." unique_id=562371206]
+
+[node name="Right" type="RayCast2D" parent="CherryBombRays" unique_id=1905299609]
+target_position = Vector2(33, 0)
+collision_mask = 18
+
+[node name="Left" type="RayCast2D" parent="CherryBombRays" unique_id=1850835198]
+target_position = Vector2(-33, 0)
+collision_mask = 18
+
+[node name="Up" type="RayCast2D" parent="CherryBombRays" unique_id=203403018]
+target_position = Vector2(0, -33)
+collision_mask = 18

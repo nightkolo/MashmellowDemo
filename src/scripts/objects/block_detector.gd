@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name BlockDetector
 
 var rays: Array[RayCast2D]

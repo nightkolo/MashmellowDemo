@@ -8,8 +8,13 @@
 - [x] Paste assets
 - [x] Set-up project.godot
 - [x] Paste prototype code
-- [ ] Set up test map
+- [x] Set up test map
+- [x] Set Tilemap
+- [x] Set-up collision
+  - [x] Collision names
 - [ ] Rework sizing
+- [ ] Rework code
+- [ ] Blah Blah Blah 
 
 ### Gameplay code
 

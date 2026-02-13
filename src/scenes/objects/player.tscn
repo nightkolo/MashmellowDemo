@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://chans4uy22002"]
+
+[ext_resource type="Script" uid="uid://b56yygeh2dlui" path="res://scripts/objects/player.gd" id="1_a8lix"]
+[ext_resource type="PackedScene" uid="uid://bt15qcfnm63xf" path="res://scenes/objects/block_mashed.tscn" id="2_2147m"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1691389058]
+collision_layer = 2
+collision_mask = 105
+script = ExtResource("1_a8lix")
+
+[node name="Mashed" parent="." unique_id=499008387 instance=ExtResource("2_2147m")]
+mash_type = 99
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=2097318703]
+wait_time = 0.12
+one_shot = true
+
+[node name="CoyoteJumpTimer" type="Timer" parent="." unique_id=2022613437]
+wait_time = 0.12
+one_shot = true
+
+[node name="CherryBombAirTimer" type="Timer" parent="." unique_id=1702203392]
+one_shot = true

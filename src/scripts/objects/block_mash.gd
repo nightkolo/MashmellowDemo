@@ -8,6 +8,9 @@ var parent_block: Mashed
 
 
 func _ready() -> void:
+	collision_layer = 4
+	collision_mask = 4
+	
 	if get_parent() is Mashed:
 		parent_block = get_parent()
 		

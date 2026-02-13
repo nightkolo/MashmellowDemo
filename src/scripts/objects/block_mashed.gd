@@ -12,9 +12,9 @@ extends CollisionShape2D
 @export var mashed_object_1x2: PackedScene
 
 @onready var block_detect: BlockDetector = $BlockDetect
-@onready var area_2d: Area2D = $Area2D
-@onready var sprite: Sprite2D = $Icon
-@onready var block: MashBlock = $Area2D
+#@onready var area_2d: Area2D = $Area2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var block: MashBlock = $MashBlock
 
 var parent_player: Player
 
@@ -45,8 +45,9 @@ func _ready() -> void:
 	for ray: RayCast2D in block_detect.rays:
 		ray.enabled = true
 	
-	for ray: RayCast2D in block_detect.cherry_bomb_rays:
-		ray.enabled = true
+	if mash_special == GameLogic.SpecialMashType.CHERRY_BOMB:
+		for ray: RayCast2D in block_detect.cherry_bomb_rays:
+			ray.enabled = true
 		
 
 func mash() -> bool: ## Ok O(1)

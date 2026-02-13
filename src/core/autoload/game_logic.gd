@@ -99,17 +99,18 @@ func get_mash_type_color(type: MashType) -> Color:
 func get_special_mash_type_color(type: SpecialMashType) -> Color:
 	var col: Color
 	
-	match type:
-		SpecialMashType.CHERRY_BOMB:
-			col = Color.RED * 2.0
-			
+	#match type:
+		#SpecialMashType.CHERRY_BOMB:
+			#col = Color.RED * 2.0
+			#
 	return col
 
 
-func setup_mash(sprite: Sprite2D, type: MashType, special: SpecialMashType = GameLogic.SpecialMashType.REGULAR) -> void:
-	if special != GameLogic.SpecialMashType.REGULAR:
-		sprite.self_modulate = get_special_mash_type_color(special)
-	else:
-		sprite.self_modulate = get_mash_type_color(type)
+func setup_mash(sprite: Sprite2D, type: MashType, special: SpecialMashType = SpecialMashType.REGULAR) -> void:
+	pass
+	#if special != GameLogic.SpecialMashType.REGULAR:
+		#sprite.self_modulate = get_special_mash_type_color(special)
+	#else:
+		#sprite.self_modulate = get_mash_type_color(type)
 	
 	
