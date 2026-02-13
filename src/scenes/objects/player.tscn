@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chans4uy22002"]
 
 [ext_resource type="Script" uid="uid://b56yygeh2dlui" path="res://scripts/objects/player.gd" id="1_a8lix"]
-[ext_resource type="PackedScene" uid="uid://bt15qcfnm63xf" path="res://scenes/objects/block_mashed.tscn" id="2_2147m"]
+[ext_resource type="PackedScene" uid="uid://bt15qcfnm63xf" path="res://scenes/objects/block_mashed_1x1.tscn" id="2_2147m"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1691389058]
 collision_layer = 2

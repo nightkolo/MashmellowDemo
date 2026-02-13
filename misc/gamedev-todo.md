@@ -12,9 +12,9 @@
 - [x] Set Tilemap
 - [x] Set-up collision
   - [x] Collision names
-- [ ] Rework sizing
-- [ ] Rework code
-- [ ] Blah Blah Blah 
+- [x] Rework sizing
+- [x] Rework code
+- [x] Blah Blah Blah 
 
 ### Gameplay code
 

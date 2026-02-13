@@ -7,15 +7,15 @@ signal has_jumpped()
 signal cherry_bomb_activated()
 
 @export var auto_assign_child_blocks: bool = true
-#@export var unmashed_object: PackedScene = preload("res://scenes/block_unmashed.tscn")
+@export var unmashed_object: PackedScene = preload("res://scenes/objects/block_unmashed_1x1.tscn")
 #@export var unmashed_object_1x2: PackedScene = preload("res://scenes/block_unmashed_1x2.tscn")
-@export var unmashed_object: PackedScene
+#@export var unmashed_object: PackedScene
 @export var unmashed_object_1x2: PackedScene 
 @export_group("Movement Variables")
-@export_range(-400.0, 400.0, 1.0, "or_greater", "or_less") var speed: float = 120.0
-@export_range(-1000.0, 1000.0, 1.0, "or_greater", "or_less") var acceleration: float = 250.0
-@export_range(-2000.0, 2000.0, 1.0, "or_greater", "or_less") var deceleration: float = 400.0
-@export_range(-400.0, 400.0, 1.0, "or_greater", "or_less") var jump_height: float = 242.0
+@export_range(-600.0, 600.0, 1.0, "or_greater", "or_less") var speed: float = 480.0
+@export_range(-1500.0, 1500.0, 1.0, "or_greater", "or_less") var acceleration: float = 1000.0
+@export_range(-2000.0, 2500.0, 1.0, "or_greater", "or_less") var deceleration: float = 2000.0
+@export_range(-400.0, 400.0, 1.0, "or_greater", "or_less") var jump_height: float = 1050.0
 
 @onready var jump_window_timer: Timer = $JumpBufferTimer
 @onready var coyote_jump_timer: Timer = $CoyoteJumpTimer

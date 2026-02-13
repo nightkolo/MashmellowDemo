@@ -8,7 +8,6 @@ var current_level: Level
 var current_player: Player
 var current_order_checker: OrderChecker
 
-const BLOCK_SIZE = 16.0 # Let 16.0, 64.0 Final
 const MASH_WAIT_TIME = 0.5
 const ORDER_COMPLETE_WAIT_TIME = 1.0
 
@@ -18,8 +17,6 @@ const LEVEL_FILE_END = ".tscn"
 
 
 func _input(event: InputEvent) -> void:
-	
-	
 	if event.is_action_pressed("game_reset"):
 		get_tree().reload_current_scene()
 
