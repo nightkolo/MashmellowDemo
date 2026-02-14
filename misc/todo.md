@@ -22,11 +22,28 @@
   - [x] Mash highlighters
   - [ ] Unmashable highlighter
   - [ ] Mashed/Unmashed state
-  - [ ] Animations (Tweens, on Demo)
-    - [ ] Test out
+  - [x] Animations (Tweens, on Demo)
+    - [x] Test out
+    - [ ] Fix anim
+
+### Core
+
+- [ ] Set-up block sprites
+- [ ] Improved order task presentation
+- [ ] Test and fix order task
+  - [ ] 1x2 test
+- [ ] Structure order complete anim
 
 ### Assets and Design (64/128 Block size)
-- [ ] NPC, design, dialog
+- [ ] BG (Moving checkerboard)
+- [ ] TileMap
+  - [ ] Basic Block (for beta, colored for worlds)
+  - [ ] Seperated Tilemaps
+    - [ ] Collision Layer (visible = false)
+    - [ ] TM1
+    - [ ] TM2
+  - [ ] Colored for worlds
+  - [ ] Deco
 - [ ] Marshmellow block
   - [x] Player
   - [x] White
@@ -35,6 +52,7 @@
   - [x] Biscuit
   - [x] Cherry Bomb
   - [ ] Mini
+  - [ ] Forms for 1x2 block
 - [ ] Eyes
   - [x] Idle
   - [x] Sleep
@@ -43,11 +61,7 @@
 - [ ] Mechanics
   - [x] Doors
   - [ ] Switch
-  - [ ] Identifiers
-- [ ] TileMap
-  - [ ] Basic Block (for beta, colored for worlds)
-  - [ ] Deco
-- [ ] BG (Moving checkerboard)
+- [ ] NPC, design, dialog
 - [ ] Character
   - [ ] Design
   - [ ] Dialogue

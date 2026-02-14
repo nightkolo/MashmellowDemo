@@ -31,8 +31,6 @@ var input_direction: float
 var child_blocks: Array[Mashed] # Stack data structure
 var new_child_blocks: Array[Mashed] # Stack data structure
 
-## TODO: Working on implementing signal events for animation
-
 var is_landed: bool
 
 const CHERRY_BOMB_STRENGTH = 400.0
@@ -240,7 +238,7 @@ func anim_land(strength: float = 1.0) -> void:
 	_tween_land.set_ease(Tween.EASE_OUT)
 	
 	for block: Mashed in child_blocks:
-		const POS = 32.0
+		const POS = 32.0 # Bad
 		block.sprite_node.position.y = POS
 		
 		if block.is_on_ground():

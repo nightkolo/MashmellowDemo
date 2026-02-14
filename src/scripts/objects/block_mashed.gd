@@ -22,10 +22,11 @@ var _original_pos: Vector2
 
 
 func is_on_ground() -> bool:
-	block_detect.down_ray.force_raycast_update()
-	print(block_detect.down_ray)
-	print(block_detect.down_ray.is_colliding())
-	return block_detect.down_ray.is_colliding()
+	for ray: RayCast2D in block_detect.ground_rays:
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			return true
+	return false
 
 
 func _ready() -> void:

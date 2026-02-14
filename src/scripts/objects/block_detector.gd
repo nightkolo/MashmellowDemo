@@ -1,10 +1,10 @@
 extends Node2D
 class_name BlockDetector
 
-@onready var down_ray: RayCast2D = $DownG
+@onready var ground_rays: Array[RayCast2D] = [$DownRays/Down, $DownRays/Down2]
+@onready var rays: Array[RayCast2D] = [$Down, $Right, $Left]
+@onready var cherry_bomb_rays: Array[RayCast2D] = [$DownRays/Down, $DownRays/Down2]
 
-var rays: Array[RayCast2D]
-var cherry_bomb_rays: Array[RayCast2D]
 var parent_block: Mashed
 
 
@@ -16,9 +16,11 @@ func is_colliding() -> bool:
 
 
 func _ready() -> void:
-	rays = [$Down, $Right, $Left]
-	
-	cherry_bomb_rays = [$CherryBombRays/Up, $CherryBombRays/Right, $CherryBombRays/Left]
+	#rays = [$Down, $Right, $Left]
+	#
+	#cherry_bomb_rays = [$CherryBombRays/Up, $CherryBombRays/Right, $CherryBombRays/Left]
+	#
+	#ground_rays = [$DownRays/Down, $DownRays/Down2]
 	
 	if get_parent() is Mashed:
 		parent_block = get_parent()
