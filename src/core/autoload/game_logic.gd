@@ -6,22 +6,7 @@ signal player_unmashed()
 signal order_checked()
 signal order_complete()
 
-enum MashType {
-	WHITE = 0,
-	GOLDEN = 1,
-	CHOCO = 2,
-	BISCUIT = 3,
-	PLAYER = 99
-}
 
-enum SpecialMashType {
-	REGULAR = 0,
-	CHERRY_BOMB = 1
-}
-enum BuildType {
-	SQUARE = 0,
-	RECTANGLE = 1
-}
 
 var is_checking_order_match: bool = false
 var has_won: bool = false
@@ -72,45 +57,15 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 		
 	order_checked.emit()
 	
-## GameUtil
-
-func get_mash_type_color(type: MashType) -> Color:
-	var col: Color
 	
-	match type:
-		MashType.WHITE:
-			col = Color.WHITE * 1.5
-			
-		MashType.GOLDEN:
-			col = Color.YELLOW
-			
-		MashType.CHOCO:
-			col = Color.GRAY
-			
-		MashType.BISCUIT:
-			col = Color.DARK_GREEN
-			
-		MashType.PLAYER:
-			col = Color.WHITE * 3
-			
-	return col
-			
-
-func get_special_mash_type_color(type: SpecialMashType) -> Color:
-	var col: Color
-	
-	#match type:
-		#SpecialMashType.CHERRY_BOMB:
-			#col = Color.RED * 2.0
-			#
-	return col
-
-
-func setup_mash(sprite: Sprite2D, type: MashType, special: SpecialMashType = SpecialMashType.REGULAR) -> void:
-	pass
-	#if special != GameLogic.SpecialMashType.REGULAR:
-		#sprite.self_modulate = get_special_mash_type_color(special)
-	#else:
-		#sprite.self_modulate = get_mash_type_color(type)
+func setup_mash(
+	sprite: Sprite2D,
+	type: Util.MashType,
+	special: Util.SpecialMashType = Util.SpecialMashType.REGULAR,
+	build: Util.BuildType = Util.BuildType.SQUARE) -> void:
+	if special != Util.SpecialMashType.REGULAR:
+		sprite.texture = preload("res://assets/objects/block-cherry-bomb-01.png")
+	else:
+		sprite.texture = Util.get_mash_type_texture(type, build)
 	
 	

@@ -2,7 +2,7 @@
 extends Area2D
 class_name MashBlock
 
-var mash_type: GameLogic.MashType
+var mash_type: Util.MashType
 
 var parent_block: Mashed
 
@@ -17,10 +17,10 @@ func _ready() -> void:
 		mash_type = parent_block.mash_type
 
 
-func is_match(type: GameLogic.MashType) -> bool:
+func is_match(type: Util.MashType) -> bool:
 	if parent_block:
 		return (
-			parent_block.mash_special == GameLogic.SpecialMashType.REGULAR &&
+			parent_block.mash_special == Util.SpecialMashType.REGULAR &&
 			type == mash_type
 			)
 		

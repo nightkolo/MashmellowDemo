@@ -25,7 +25,7 @@ func _ready() -> void:
 	if get_parent() is Mashed:
 		parent_block = get_parent()
 		
-		if parent_block.build_type == GameLogic.BuildType.RECTANGLE:
+		if parent_block.build_type == Util.BuildType.RECTANGLE:
 			for ray: RayCast2D in [$Right2, $Left2]:
 				rays.append(ray)
 				ray.visible = true

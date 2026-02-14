@@ -2,7 +2,7 @@
 extends Area2D
 class_name MashBlockChecker
 
-@export var what_im_happy_with: GameLogic.MashType
+@export var what_im_happy_with: Util.MashType
 
 @onready var sprite: Sprite2D = $Icon
 

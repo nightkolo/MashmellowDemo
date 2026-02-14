@@ -9,7 +9,10 @@ collision_layer = 9
 lock_rotation = true
 script = ExtResource("1_n48d1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1558432174]
+[node name="SpriteNode" type="Node2D" parent="." unique_id=277771888]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteNode" unique_id=1558432174]
+self_modulate = Color(0.82665706, 0.82665706, 0.82665706, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_atpv5")
 
