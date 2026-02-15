@@ -38,6 +38,7 @@ const CHERRY_BOMB_STRENGTH = 400.0
 
 var _pos_before_mash: Vector2
 var _has_mashed: bool
+var _last_velocity_y: float = 0.0
 
 
 func _ready() -> void:
@@ -157,9 +158,6 @@ func jump() -> void:
 	velocity.y = -jump_height
 
 
-var _last_velocity_y: float = 0.0
-
-
 func _move(delta: float) -> void:
 	var was_on_floor: bool = is_on_floor()
 	
@@ -228,6 +226,18 @@ func _state() -> void:
 			block.sprite.scale = Vector2.ONE * 0.5
 
 
+func _animate() -> void:
+	for block: Mashed in child_blocks:
+		block.sprite_eyes.position = velocity / 50.0
+
+
+func _physics_process(delta: float) -> void:
+	if !GameLogic.is_checking_order_match:
+		_move(delta)
+	_state()
+	_animate()
+
+
 ### Anim
 var _tween_land: Tween
 
@@ -277,22 +287,13 @@ func anim_jump() -> void:
 			_tween_jump.tween_property(block.sprite, "scale", Vector2.ONE*0.5, 1.0)
 
 
-func _animate() -> void:
-	pass
-
-
-func _physics_process(delta: float) -> void:
-	if !GameLogic.is_checking_order_match:
-		_move(delta)
-	_state()
-	_animate()
-	
 
 func _check_child_blocks() -> void:
 	if new_child_blocks.is_empty():
 		return
 	
 	# TODO: Fix for 1x2 blocks
+	# There's issues probably
 	
 	for i in range(1, new_child_blocks.size()):
 		if new_child_blocks[i].position == new_child_blocks[0].position:

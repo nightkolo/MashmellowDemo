@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://madv71ijp5i3" path="res://scripts/objects/block_unmashed.gd" id="1_n48d1"]
 [ext_resource type="Shape2D" uid="uid://crhhqmr3wqyt5" path="res://resources/mashed_rectangle_shape_2d.tres" id="2_qkq5r"]
+[ext_resource type="Texture2D" uid="uid://cbyhro8uojy6a" path="res://assets/objects/block-eyes-02.png" id="3_4m1b3"]
 [ext_resource type="Texture2D" uid="uid://bsji6bkbccpc8" path="res://assets/objects/block-white-01.png" id="3_atpv5"]
 
 [node name="Unmashed" type="RigidBody2D" unique_id=1096808338]
@@ -15,6 +16,12 @@ script = ExtResource("1_n48d1")
 self_modulate = Color(0.82665706, 0.82665706, 0.82665706, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_atpv5")
+
+[node name="Eyes" type="Node2D" parent="." unique_id=808718703]
+
+[node name="Sprite2D" type="Sprite2D" parent="Eyes" unique_id=896589209]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_4m1b3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=767633492]
 shape = ExtResource("2_qkq5r")

@@ -12,9 +12,12 @@ extends CollisionShape2D
 #@export var mashed_object_1x2: PackedScene
 
 @onready var block_detect: BlockDetector = $BlockDetect
+@onready var block: MashBlock = $MashBlock
+
+## For Anim
 @onready var sprite_node: Node2D = $SpriteNode
 @onready var sprite: Sprite2D = $SpriteNode/Sprite2D
-@onready var block: MashBlock = $MashBlock
+@onready var sprite_eyes: Sprite2D = $Eyes/Sprite2D
 
 var parent_player: Player
 var sprite_original_pos_y: float

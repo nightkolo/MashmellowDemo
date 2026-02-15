@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://madv71ijp5i3" path="res://scripts/objects/block_unmashed.gd" id="1_cg17m"]
 [ext_resource type="Texture2D" uid="uid://du7hfm2logsjq" path="res://assets/objects/block-white-1x2-01.png" id="2_onbp7"]
+[ext_resource type="Texture2D" uid="uid://cbyhro8uojy6a" path="res://assets/objects/block-eyes-02.png" id="3_cg17m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg17m"]
 size = Vector2(62, 124)
@@ -19,6 +20,13 @@ position = Vector2(0, 64)
 position = Vector2(0, -64)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_onbp7")
+
+[node name="Eyes" type="Node2D" parent="." unique_id=774960741]
+
+[node name="Sprite2D" type="Sprite2D" parent="Eyes" unique_id=1096876944]
+position = Vector2(0, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_cg17m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=767633492]
 shape = SubResource("RectangleShape2D_cg17m")
