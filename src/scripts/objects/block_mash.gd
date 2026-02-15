@@ -20,7 +20,7 @@ func _ready() -> void:
 func is_match(type: Util.MashType) -> bool:
 	if parent_block:
 		return (
-			parent_block.mash_special == Util.SpecialMashType.REGULAR &&
+			parent_block.mash_type != Util.MashType.CHERRY_BOMB &&
 			type == mash_type
 			)
 		

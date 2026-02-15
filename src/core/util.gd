@@ -1,15 +1,17 @@
 extends Node
 class_name Util
 
+
+# TODO: Mash CHERRY_BOMB into MashType
 enum MashType {
 	WHITE = 0,
 	GOLDEN = 1,
 	CHOCO = 2,
 	BISCUIT = 3,
-	PLAYER = 99
+	PLAYER = 99,
+	CHERRY_BOMB = 100
 }
-
-enum SpecialMashType {
+enum SpecialMashType { ## @deprecated
 	REGULAR = 0,
 	CHERRY_BOMB = 1
 }
@@ -51,6 +53,9 @@ static func get_mash_type_texture(type: MashType, build: BuildType) -> Texture2D
 			
 		MashType.PLAYER:
 			text = preload("res://assets/objects/block-player-01.png")
+			
+		MashType.CHERRY_BOMB:
+			text = preload("res://assets/objects/block-cherry-bomb-01.png")
 			
 	return text
 

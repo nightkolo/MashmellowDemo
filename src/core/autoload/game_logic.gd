@@ -61,11 +61,7 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 func setup_mash(
 	sprite: Sprite2D,
 	type: Util.MashType,
-	special: Util.SpecialMashType = Util.SpecialMashType.REGULAR,
 	build: Util.BuildType = Util.BuildType.SQUARE) -> void:
-	if special != Util.SpecialMashType.REGULAR:
-		sprite.texture = preload("res://assets/objects/block-cherry-bomb-01.png")
-	else:
-		sprite.texture = Util.get_mash_type_texture(type, build)
+	sprite.texture = Util.get_mash_type_texture(type, build)
 	
 	

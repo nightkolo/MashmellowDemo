@@ -11,6 +11,9 @@
 [node name="Mashed" type="CollisionShape2D" unique_id=499008387]
 shape = ExtResource("1_32g1q")
 script = ExtResource("2_lydfl")
+mash_type = null
+mash_special = null
+build_type = null
 metadata/_custom_type_script = "uid://bgc37b0mpxwv3"
 
 [node name="SpriteNode" type="Node2D" parent="." unique_id=1755599335]

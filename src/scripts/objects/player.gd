@@ -79,7 +79,7 @@ func get_unmashed_object(type: Util.BuildType) -> Unmashed:
 			
 
 func mash_child_blocks() -> void: ## Ok -> O(n)
-	if child_blocks[-1].mash_special == Util.SpecialMashType.CHERRY_BOMB:
+	if child_blocks[-1].mash_type == Util.MashType.CHERRY_BOMB:
 		return
 	
 	#var blocks: Array[Mashed] = child_blocks.duplicate(true)
@@ -98,21 +98,8 @@ func unmash() -> void: ## Ok -> O(1)
 	var old_mashed: Mashed = child_blocks.pop_back()
 	_pos_before_mash = position
 	
-	match old_mashed.mash_special:
-		
-		Util.SpecialMashType.REGULAR:
-			var unmashed: Unmashed = get_unmashed_object(old_mashed.build_type)
-					
-			unmashed.global_position = old_mashed.global_position
-			unmashed.mash_type = old_mashed.mash_type
-			unmashed.mash_special = old_mashed.mash_special
-			old_mashed.queue_free()
-			
-			GameMgr.current_level.add_child(unmashed)
-			
-			await return_position()
-			
-		Util.SpecialMashType.CHERRY_BOMB:
+	match old_mashed.mash_type:
+		Util.MashType.CHERRY_BOMB:
 			cherry_bomb_activated.emit()
 			
 			var push_to: Vector2
@@ -129,6 +116,17 @@ func unmash() -> void: ## Ok -> O(1)
 			velocity += -push_to * CHERRY_BOMB_STRENGTH
 			
 			mashed.queue_free()
+			
+		_:
+			var unmashed: Unmashed = get_unmashed_object(old_mashed.build_type)
+					
+			unmashed.global_position = old_mashed.global_position
+			unmashed.mash_type = old_mashed.mash_type
+			old_mashed.queue_free()
+			
+			GameMgr.current_level.add_child(unmashed)
+			
+			await return_position()
 
 
 func is_being_flown() -> bool:

@@ -29,6 +29,8 @@
 ### Core
 
 - [x] Set-up block sprites
+- [ ] Set 1x2 blocks
+- [ ] Add eye sprites
 - [ ] Improved order task presentation
 - [ ] Test and fix order task
   - [ ] 1x2 test

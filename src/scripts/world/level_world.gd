@@ -1,4 +1,4 @@
-@tool
+#@tool
 extends Node2D
 class_name World
 
@@ -7,8 +7,6 @@ class_name World
 @export var bg_speed: float = 4.0
 
 @onready var bg_sprite: Sprite2D = $BG/Sprite2D
-
-
 
 
 func _ready() -> void:

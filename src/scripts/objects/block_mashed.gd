@@ -2,7 +2,7 @@ class_name Mashed
 extends CollisionShape2D
 
 @export var mash_type: Util.MashType
-@export var mash_special: Util.SpecialMashType
+#@export var mash_special: Util.SpecialMashType
 @export var build_type: Util.BuildType
 
 @export_category("Objects to Assign")
@@ -42,7 +42,7 @@ func _ready() -> void:
 	_original_pos = position
 	sprite_original_pos_y = sprite_node.position.y
 	
-	GameLogic.setup_mash(sprite, mash_type, mash_special, build_type)
+	GameLogic.setup_mash(sprite, mash_type, build_type)
 	block.mash_type = mash_type
 	
 	var tween := create_tween()
@@ -54,7 +54,7 @@ func _ready() -> void:
 	for ray: RayCast2D in block_detect.rays:
 		ray.enabled = true
 	
-	if mash_special == Util.SpecialMashType.CHERRY_BOMB:
+	if mash_type == Util.MashType.CHERRY_BOMB:
 		for ray: RayCast2D in block_detect.cherry_bomb_rays:
 			ray.enabled = true
 		
@@ -62,7 +62,7 @@ func _ready() -> void:
 func mash() -> bool: ## Ok O(1)
 	var collided: bool = false
 	
-	if mash_special == Util.SpecialMashType.CHERRY_BOMB:
+	if mash_type == Util.MashType.CHERRY_BOMB:
 		return false
 	
 	for ray: RayCast2D in block_detect.rays:
@@ -81,7 +81,6 @@ func mash() -> bool: ## Ok O(1)
 
 				new_mashed.position = get_new_mashed_positioning(unmash_at, unmashed.build_type, ray)
 				new_mashed.mash_type = unmashed.mash_type
-				new_mashed.mash_special = unmashed.mash_special
 				
 				unmashed.queue_free()
 				

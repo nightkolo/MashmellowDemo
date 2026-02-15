@@ -2,7 +2,6 @@ class_name Unmashed
 extends RigidBody2D
 
 @export var mash_type: Util.MashType
-@export var mash_special: Util.SpecialMashType
 @export var build_type: Util.BuildType
 
 @onready var up: RayCast2D = $Up
@@ -14,7 +13,7 @@ var colli_shape: RectangleShape2D
 
 
 func _ready() -> void:
-	GameLogic.setup_mash(sprite, mash_type, mash_special, build_type)
+	GameLogic.setup_mash(sprite, mash_type, build_type)
 	
 	colli_shape = colli.shape
 	

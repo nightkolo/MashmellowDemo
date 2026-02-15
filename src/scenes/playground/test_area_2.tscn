@@ -28,15 +28,17 @@ position = Vector2(352, 480)
 
 [node name="Unmashed" parent="." unique_id=1096808338 instance=ExtResource("4_w7gni")]
 position = Vector2(352, 224)
+mash_type = 1
 
 [node name="Unmashed2" parent="." unique_id=638127100 instance=ExtResource("4_w7gni")]
 position = Vector2(1184, 224)
 
 [node name="Unmashed3" parent="." unique_id=1302166780 instance=ExtResource("4_w7gni")]
-position = Vector2(1056, 448)
+position = Vector2(1057, 448)
 
 [node name="Unmashed4" parent="." unique_id=1808360446 instance=ExtResource("4_w7gni")]
 position = Vector2(480, 608)
+mash_type = 1
 
 [node name="OrderChecker" type="Node2D" parent="." unique_id=1902788726]
 script = ExtResource("6_vsebg")
