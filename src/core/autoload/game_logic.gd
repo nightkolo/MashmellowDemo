@@ -6,8 +6,6 @@ signal player_unmashed()
 signal order_checked()
 signal order_complete()
 
-
-
 var is_checking_order_match: bool = false
 var has_won: bool = false
 

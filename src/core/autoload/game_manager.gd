@@ -8,13 +8,6 @@ var current_level: Level
 var current_player: Player
 var current_order_checker: OrderChecker
 
-const MASH_WAIT_TIME = 0.5
-const ORDER_COMPLETE_WAIT_TIME = 1.0
-
-const LEVEL_FILE_BEGIN = "res://levels/level_"
-
-const LEVEL_FILE_END = ".tscn"
-
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("game_reset"):
@@ -24,7 +17,7 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	#Engine.time_scale = 1.0/8.0
 	game_just_ended.connect(func():
-		await get_tree().create_timer(ORDER_COMPLETE_WAIT_TIME).timeout
+		await get_tree().create_timer(Util.ORDER_COMPLETE_WAIT_TIME).timeout
 		
 		game_end.emit()
 		)
@@ -42,7 +35,7 @@ func goto_next_level() -> void:
 		return
 	
 	var next_lvl_id := current_level.scene_file_path.to_int() + 1
-	var next_lvl_path := LEVEL_FILE_BEGIN + str(next_lvl_id) + LEVEL_FILE_END
+	var next_lvl_path := Util.LEVEL_FILE_BEGIN + str(next_lvl_id) + Util.LEVEL_FILE_END
 	
 	get_tree().change_scene_to_file(next_lvl_path)
 	

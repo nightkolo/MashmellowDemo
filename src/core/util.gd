@@ -1,8 +1,6 @@
 extends Node
 class_name Util
 
-
-# TODO: Mash CHERRY_BOMB into MashType
 enum MashType {
 	WHITE = 0,
 	GOLDEN = 1,
@@ -19,6 +17,13 @@ enum BuildType {
 	SQUARE = 0,
 	RECTANGLE = 1
 }
+
+const MASH_WAIT_TIME = 0.5
+const ORDER_COMPLETE_WAIT_TIME = 1.0
+
+const LEVEL_FILE_BEGIN = "res://levels/level_"
+
+const LEVEL_FILE_END = ".tscn"
 
 const BLOCK_SIZE = 64.0
 const GRAVITY_MULT = 4.0
