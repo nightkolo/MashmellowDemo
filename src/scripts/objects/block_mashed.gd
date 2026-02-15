@@ -6,10 +6,10 @@ extends CollisionShape2D
 @export var build_type: Util.BuildType
 
 @export_category("Objects to Assign")
-@export var mashed_object: PackedScene = load("res://scenes/objects/block_mashed_1x1.tscn")
-#@export var mashed_object_1x2: PackedScene = load("res://scenes/block_mashed_1x2.tscn")
+@export var mashed_object: PackedScene = preload("res://scenes/objects/block_mashed_1x1.tscn")
+@export var mashed_object_1x2: PackedScene = preload("res://scenes/objects/block_mashed_1x2.tscn")
 #@export var mashed_object: PackedScene
-@export var mashed_object_1x2: PackedScene
+#@export var mashed_object_1x2: PackedScene
 
 @onready var block_detect: BlockDetector = $BlockDetect
 @onready var sprite_node: Node2D = $SpriteNode
@@ -49,7 +49,7 @@ func _ready() -> void:
 	
 	tween.tween_property(self, "scale", Vector2.ONE, 0.25)
 	
-	await get_tree().create_timer(GameMgr.MASH_WAIT_TIME).timeout
+	await get_tree().create_timer(Util.MASH_WAIT_TIME).timeout
 	
 	for ray: RayCast2D in block_detect.rays:
 		ray.enabled = true
@@ -119,14 +119,14 @@ func get_new_mashed_positioning(found_at: Vector2, type: Util.BuildType, ray: Ra
 			repos = position + (found_at * Util.BLOCK_SIZE)
 			
 			if build_type == Util.BuildType.RECTANGLE:
-				repos += Vector2.DOWN * 8.0
+				repos += Vector2.DOWN * Util.BLOCK_SIZE * 0.5
 				
 				if ray != null:
 					if ray.position.y < 0:
 						repos += (Vector2.UP * Util.BLOCK_SIZE)
 				
 		Util.BuildType.RECTANGLE:
-			repos = position + (found_at * Util.BLOCK_SIZE) + (Vector2.DOWN * 8.0)
+			repos = position + (found_at * Util.BLOCK_SIZE) + (Vector2.DOWN * Util.BLOCK_SIZE * 0.5)
 	
 	return repos
 				

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://buwssnpn4ltxb"]
+
+[ext_resource type="Script" uid="uid://bgc37b0mpxwv3" path="res://scripts/objects/block_mashed.gd" id="2_jo7o3"]
+[ext_resource type="Texture2D" uid="uid://du7hfm2logsjq" path="res://assets/objects/block-white-1x2-01.png" id="2_wfio2"]
+[ext_resource type="PackedScene" uid="uid://krw76abox8r3" path="res://scenes/game/block_detector.tscn" id="4_84y5p"]
+[ext_resource type="Script" uid="uid://bd6gly6surqfe" path="res://scripts/objects/block_mash.gd" id="5_p1750"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka0jd"]
+size = Vector2(62, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy0s"]
+
+[node name="Mashed" type="CollisionShape2D" unique_id=499008387]
+shape = SubResource("RectangleShape2D_ka0jd")
+script = ExtResource("2_jo7o3")
+build_type = 1
+metadata/_custom_type_script = "uid://bgc37b0mpxwv3"
+
+[node name="SpriteNode" type="Node2D" parent="." unique_id=1755599335]
+position = Vector2(0, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteNode" unique_id=678643639]
+position = Vector2(0, -64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wfio2")
+
+[node name="BlockDetect" parent="." unique_id=754251529 instance=ExtResource("4_84y5p")]
+position = Vector2(0, 32)
+
+[node name="MashBlock" type="Area2D" parent="." unique_id=652902660]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_p1750")
+metadata/_custom_type_script = "uid://bd6gly6surqfe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MashBlock" unique_id=918425020]
+shape = SubResource("RectangleShape2D_jiy0s")

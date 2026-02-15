@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cuppb1uimxgtj" path="res://resources/world_tileset_01.tres" id="2_jpekk"]
 [ext_resource type="PackedScene" uid="uid://chans4uy22002" path="res://scenes/objects/player.tscn" id="3_2enpk"]
 [ext_resource type="PackedScene" uid="uid://bn6154eu6l5ce" path="res://scenes/objects/block_unmashed_1x1.tscn" id="4_ohytp"]
+[ext_resource type="PackedScene" uid="uid://vs5datj6ikqy" path="res://scenes/objects/block_unmashed_1x2.tscn" id="6_2enpk"]
 
 [node name="Level" type="Node2D" unique_id=2026468441]
 script = ExtResource("1_desex")
@@ -31,3 +32,6 @@ mash_type = 1
 [node name="Unmashed2" parent="." unique_id=1830165316 instance=ExtResource("4_ohytp")]
 position = Vector2(832, 480)
 mash_type = 3
+
+[node name="Unmashed3" parent="." unique_id=1000124606 instance=ExtResource("6_2enpk")]
+position = Vector2(544, 512)
