@@ -32,7 +32,7 @@
 - [x] Reworked MashType
 - [x] Set 1x2 blocks
 - [x] Add eye sprites
-- [ ] Improved order task presentation
+- [x] Improved order task presentation
 - [ ] Test and fix order task
   - [ ] 1x2 test
 - [ ] Structure order complete anim

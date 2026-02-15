@@ -21,7 +21,7 @@ enum BuildType {
 const MASH_WAIT_TIME = 0.5
 const ORDER_COMPLETE_WAIT_TIME = 1.0
 
-const LEVEL_FILE_BEGIN = "res://levels/level_"
+const LEVEL_FILE_BEGIN = "res://scenes/levels/level_"
 
 const LEVEL_FILE_END = ".tscn"
 
