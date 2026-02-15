@@ -31,7 +31,7 @@
 - [x] Set-up block sprites
 - [x] Reworked MashType
 - [x] Set 1x2 blocks
-- [ ] Add eye sprites
+- [x] Add eye sprites
 - [ ] Improved order task presentation
 - [ ] Test and fix order task
   - [ ] 1x2 test

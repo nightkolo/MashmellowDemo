@@ -4,14 +4,18 @@ class_name MashBlockChecker
 
 @export var what_im_happy_with: Util.MashType
 
-@onready var sprite: Sprite2D = $Icon
+#@onready var sprite: Sprite2D = $Icon
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
-	GameLogic.setup_mash(sprite, what_im_happy_with)
+	GameLogic.setup_mash_block(sprite, what_im_happy_with)
 	
-	collision_layer = 2048
-	collision_mask = 2048
+	if get_parent() is OrderChecker:
+		(get_parent() as OrderChecker).order_blocks.append(self)
+	
+	collision_layer = 4
+	collision_mask = 4
 	
 	
 # Called by parent OrderChecker

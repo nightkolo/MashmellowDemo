@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://yivkpt02m4ox"]
+
+[ext_resource type="Script" uid="uid://bspkwd50fdkqc" path="res://scripts/objects/order_block_mash_checker.gd" id="1_euh6i"]
+[ext_resource type="Texture2D" uid="uid://caryyi1xuxt2y" path="res://assets/objects/block-order-player-01.png" id="2_88ah0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk5k4"]
+
+[node name="MashBlockChecker" type="Area2D" unique_id=2075480081]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_euh6i")
+what_im_happy_with = 99
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=748763289]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_88ah0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1529780948]
+shape = SubResource("RectangleShape2D_sk5k4")

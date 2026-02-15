@@ -28,6 +28,30 @@ const LEVEL_FILE_END = ".tscn"
 const BLOCK_SIZE = 64.0
 const GRAVITY_MULT = 4.0
 
+static func get_block_mash_type_texture(type: MashType) -> Texture2D:
+	var text: Texture2D
+	
+	match type:
+		MashType.WHITE:
+			text = preload("res://assets/objects/block-order-white-01.png")
+			
+		MashType.GOLDEN:
+			text = preload("res://assets/objects/block-order-golden-01.png")
+			
+		MashType.CHOCO:
+			text = preload("res://assets/objects/block-order-choco-01.png")
+			
+		MashType.BISCUIT:
+			text = preload("res://assets/objects/block-order-biscuit-01.png")
+			
+		MashType.PLAYER:
+			text = preload("res://assets/objects/block-order-player-01.png")
+			
+		#MashType.CHERRY_BOMB:
+			#text = preload("res://assets/objects/block-order-cherry-bomb-01.png")
+			
+	return text
+
 
 static func get_mash_type_texture(type: MashType, build: BuildType) -> Texture2D:
 	var text: Texture2D

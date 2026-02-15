@@ -9,6 +9,8 @@ signal order_complete()
 var is_checking_order_match: bool = false
 var has_won: bool = false
 
+var _order_check_ori_pos: Vector2
+
 
 func _ready() -> void:
 	# (complete?) TODO: Move OrderCheck to player pos
@@ -23,11 +25,18 @@ func _ready() -> void:
 	
 	order_checked.connect(func():
 		is_checking_order_match = false
+		
+		GameMgr.current_order_checker.position = _order_check_ori_pos
 		)
 	
 	order_complete.connect(func():
 		GameMgr.game_just_ended.emit()
 		)
+	
+	await get_tree().create_timer(0.1).timeout
+	
+	_order_check_ori_pos = GameMgr.current_order_checker.position
+
 
 func order_met() -> void:
 	order_complete.emit()
@@ -56,6 +65,10 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 	order_checked.emit()
 	
 	
+func setup_mash_block(sprite: Sprite2D, type: Util.MashType) -> void:
+	sprite.texture = Util.get_block_mash_type_texture(type)
+	
+
 func setup_mash(
 	sprite: Sprite2D,
 	type: Util.MashType,

@@ -7,4 +7,6 @@ class_name Level
 
 
 func _ready() -> void:
+	GameMgr.current_level_number = scene_file_path.to_int()
+	
 	GameMgr.current_level = self

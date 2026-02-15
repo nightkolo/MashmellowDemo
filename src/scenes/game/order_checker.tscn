@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bvjtkxteylojf"]
+
+[ext_resource type="Script" uid="uid://6mcpjwt0inx1" path="res://core/order_checker.gd" id="1_va0ry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oc4kc"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="OrderChecker" type="Node2D" unique_id=516939924]
+script = ExtResource("1_va0ry")
+metadata/_custom_type_script = "uid://6mcpjwt0inx1"
+
+[node name="Label" type="Label" parent="." unique_id=903292556]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 20.0
+offset_bottom = -51.0
+pivot_offset = Vector2(20, 11)
+text = "1-1"
+label_settings = SubResource("LabelSettings_oc4kc")
+horizontal_alignment = 1

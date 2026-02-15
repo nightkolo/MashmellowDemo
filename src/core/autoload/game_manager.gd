@@ -4,6 +4,7 @@ signal game_just_ended()
 signal game_end()
 signal game_reset()
 
+var current_level_number: int
 var current_level: Level
 var current_player: Player
 var current_order_checker: OrderChecker
@@ -28,6 +29,8 @@ func _ready() -> void:
 		#GameLogic.self_destruct()
 		get_tree().reload_current_scene()
 		)
+		
+	
 
 
 func goto_next_level() -> void:
