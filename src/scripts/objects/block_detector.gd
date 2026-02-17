@@ -3,7 +3,7 @@ class_name BlockDetector
 
 @onready var ground_rays: Array[RayCast2D] = [$DownRays/Down, $DownRays/Down2]
 @onready var rays: Array[RayCast2D] = [$Down, $Right, $Left]
-@onready var cherry_bomb_rays: Array[RayCast2D] = [$DownRays/Down, $DownRays/Down2]
+@onready var cherry_bomb_rays: Array[RayCast2D] = [$CherryBombRays/Up, $CherryBombRays/Right, $CherryBombRays/Left]
 
 var parent_block: Mashed
 

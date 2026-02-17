@@ -57,9 +57,9 @@ func _ready() -> void:
 	for ray: RayCast2D in block_detect.rays:
 		ray.enabled = true
 	
-	if mash_type == Util.MashType.CHERRY_BOMB:
-		for ray: RayCast2D in block_detect.cherry_bomb_rays:
-			ray.enabled = true
+	#if mash_type == Util.MashType.CHERRY_BOMB:
+	for ray: RayCast2D in block_detect.cherry_bomb_rays:
+		ray.enabled = true
 		
 
 func mash() -> bool: ## Ok O(1)

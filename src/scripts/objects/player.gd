@@ -34,7 +34,7 @@ var new_child_blocks: Array[Mashed] # Stack data structure
 
 var is_landed: bool
 
-const CHERRY_BOMB_STRENGTH = 400.0
+const CHERRY_BOMB_STRENGTH = 40000000.0
 
 var _pos_before_mash: Vector2
 var _has_mashed: bool
@@ -68,6 +68,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("move_unmash"):
 		unmash()
+		
+	if event.is_action_pressed("game_cancel"):
+		for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
+			ray.force_raycast_update()
+			print_debug(ray)
+			print_debug(ray.is_colliding())
+			print_debug(ray.get_collider())
 
 
 func get_unmashed_object(type: Util.BuildType) -> Unmashed:
@@ -106,18 +113,23 @@ func unmash() -> void: ## Ok -> O(1)
 			
 			var push_to: Vector2
 			
+			# TODO: Fix raycast bug, bye bye im done
+			
 			for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
 				ray.force_raycast_update()
+				print_debug(ray.is_colliding())
+				print_debug(ray.get_collider())
 				
 				if ray.get_collider() is Player:
 					push_to = -ray.target_position.sign()
-			
+					print_debug(push_to)
+
 			if push_to.y > push_to.x && velocity.y > 0:
 				velocity.y = 0.0
 				
 			velocity += -push_to * CHERRY_BOMB_STRENGTH
 			
-			mashed.queue_free()
+			#old_mashed.queue_free()
 			
 		_:
 			var unmashed: Unmashed = get_unmashed_object(old_mashed.build_type)
@@ -228,7 +240,8 @@ func _state() -> void:
 
 func _animate() -> void:
 	for block: Mashed in child_blocks:
-		block.sprite_eyes.position = velocity / 50.0
+		if block:
+			block.sprite_eyes.position = velocity / 50.0
 
 
 func _physics_process(delta: float) -> void:
