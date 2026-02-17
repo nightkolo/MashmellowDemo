@@ -42,13 +42,13 @@ position = Vector2(1088, 384)
 position = Vector2(192, 512)
 
 [node name="MashBlockChecker" parent="OrderChecker" unique_id=2075480081 instance=ExtResource("7_tv7cl")]
-position = Vector2(-64, 0)
 
 [node name="MashBlockChecker2" parent="OrderChecker" unique_id=1188318660 instance=ExtResource("7_tv7cl")]
 position = Vector2(-64, 128)
 what_im_happy_with = 1
 
 [node name="MashBlockChecker3" parent="OrderChecker" unique_id=1577769492 instance=ExtResource("7_tv7cl")]
+position = Vector2(-64, 0)
 what_im_happy_with = 1
 
 [node name="MashBlockChecker4" parent="OrderChecker" unique_id=554271754 instance=ExtResource("7_tv7cl")]

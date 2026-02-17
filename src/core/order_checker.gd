@@ -14,7 +14,8 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(0.1).timeout
 	label.text = "1-" + str(GameMgr.current_level_number)
-	#modulate = Color(Color.WHITE, 0.1)
+	
+	print(order_blocks)
 
 
 func check_satisfaction() -> bool: # Ok -> O(n), Worst case -> O(n^2)

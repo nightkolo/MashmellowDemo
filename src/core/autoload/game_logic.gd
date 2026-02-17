@@ -41,7 +41,7 @@ func _ready() -> void:
 func order_met() -> void:
 	order_complete.emit()
 	print("Game over.")
-	
+		
 
 func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 	if GameMgr.current_order_checker == null || GameMgr.current_level.ignore_order:
@@ -52,15 +52,10 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 	
 	await get_tree().create_timer(0.05).timeout
 	
-	#print("")
+	print("Checking..")
 	if GameMgr.current_order_checker.check_satisfaction():
-		#print("Hooray :D")
 		order_met()
 		has_won = true
-		#order_complete.emit()
-	#else:
-		##print("Awww :(")
-		#pass
 		
 	order_checked.emit()
 	

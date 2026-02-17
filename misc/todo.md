@@ -25,6 +25,10 @@
   - [x] Animations (Tweens, on Demo)
     - [x] Test out
     - [x] Fix anim
+- [ ] Work on levels
+  - [ ] 1-3
+  - [ ] 1-4
+  - [ ] Cherry bomb fixing
 
 ### Core
 

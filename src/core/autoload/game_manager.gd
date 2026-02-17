@@ -29,8 +29,6 @@ func _ready() -> void:
 		#GameLogic.self_destruct()
 		get_tree().reload_current_scene()
 		)
-		
-	
 
 
 func goto_next_level() -> void:
