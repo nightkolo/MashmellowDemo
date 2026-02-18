@@ -34,7 +34,7 @@ var new_child_blocks: Array[Mashed] # Stack data structure
 
 var is_landed: bool
 
-const CHERRY_BOMB_STRENGTH = 40000000.0
+const CHERRY_BOMB_STRENGTH = 3200.0
 
 var _pos_before_mash: Vector2
 var _has_mashed: bool
@@ -117,17 +117,22 @@ func unmash() -> void: ## Ok -> O(1)
 			# Issue appears because raycasts are children of the thing they're trying to colliding
 			# Solution #1: Area2D
 			
-			for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
+			for ray: RayCast2D in old_mashed.block_detect.cherry_bomb_rays:
 				ray.force_raycast_update()
+				print_debug(ray)
 				print_debug(ray.is_colliding())
 				print_debug(ray.get_collider())
 				#print_debug(ray.get_overlapping_bodies())
 				#print_debug(ray.get_overlapping_areas())
 				
-				#if ray.get_collider() is Player:
-					#push_to = -ray.target_position.sign()
-					#print_debug(push_to)
-
+				if ray.get_collider() is Player:
+					push_to = -ray.target_position.sign()
+			#
+			#if push_to == Vector2.ZERO:
+				#push_to = Vector2.DOWN
+			
+			print_debug(push_to)
+			
 			if push_to.y > push_to.x && velocity.y > 0:
 				velocity.y = 0.0
 				
