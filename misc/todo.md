@@ -53,18 +53,21 @@
   - [x] Cherry Bomb
   - [x] Mini
   - [x] Forms for 1x2 block
-- [ ] Eyes
-  - [ ] Idle (Mashed)
-  - [ ] Sleep (Unmashed, darken)
+- [x] Eyes
+  - [x] Idle (Mashed)
+  - [x] Sleep (Unmashed, darken)
   - [ ] Happy
+
+### For later
+
 - [ ] TileMap
-  - [ ] Basic Block (for beta, colored for worlds)
+  - [x] Basic Block (for beta, colored for worlds)
   - [ ] Seperated Tilemaps
     - [ ] Collision Layer (visible = false)
     - [ ] TM1
     - [ ] TM2
     - [ ] Background
-  - [ ] Colored for worlds
+  - [x] Colored for worlds
   - [ ] Deco
 - [ ] Paper
 - [ ] Mechanics
