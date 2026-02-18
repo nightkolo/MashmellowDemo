@@ -69,12 +69,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("move_unmash"):
 		unmash()
 		
-	if event.is_action_pressed("game_cancel"):
-		for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
-			ray.force_raycast_update()
-			print_debug(ray)
-			print_debug(ray.is_colliding())
-			print_debug(ray.get_collider())
+	#if event.is_action_pressed("game_cancel"):
+		#for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
+			#ray.force_raycast_update()
+			#print_debug(ray)
+			#print_debug(ray.is_colliding())
+			#print_debug(ray.get_collider())
 
 
 func get_unmashed_object(type: Util.BuildType) -> Unmashed:
@@ -114,22 +114,26 @@ func unmash() -> void: ## Ok -> O(1)
 			var push_to: Vector2
 			
 			# TODO: Fix raycast bug, bye bye im done
+			# Issue appears because raycasts are children of the thing they're trying to colliding
+			# Solution #1: Area2D
 			
 			for ray: RayCast2D in mashed.block_detect.cherry_bomb_rays:
 				ray.force_raycast_update()
 				print_debug(ray.is_colliding())
 				print_debug(ray.get_collider())
+				#print_debug(ray.get_overlapping_bodies())
+				#print_debug(ray.get_overlapping_areas())
 				
-				if ray.get_collider() is Player:
-					push_to = -ray.target_position.sign()
-					print_debug(push_to)
+				#if ray.get_collider() is Player:
+					#push_to = -ray.target_position.sign()
+					#print_debug(push_to)
 
 			if push_to.y > push_to.x && velocity.y > 0:
 				velocity.y = 0.0
 				
 			velocity += -push_to * CHERRY_BOMB_STRENGTH
 			
-			#old_mashed.queue_free()
+			old_mashed.queue_free()
 			
 		_:
 			var unmashed: Unmashed = get_unmashed_object(old_mashed.build_type)

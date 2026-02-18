@@ -25,10 +25,12 @@
   - [x] Animations (Tweens, on Demo)
     - [x] Test out
     - [x] Fix anim
-- [ ] Work on levels
-  - [ ] 1-3
-  - [ ] 1-4
+- [x] Work on levels
+  - [x] 1-3
   - [ ] Cherry bomb fixing
+    - [ ] Use area2D to prevent 
+  - [ ] 1-4
+  - [ ] See how much you can develop (see priv/levels.md)
 
 ### Core
 

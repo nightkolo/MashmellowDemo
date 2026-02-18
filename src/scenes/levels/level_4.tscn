@@ -24,7 +24,7 @@ tile_map_data = PackedByteArray("AAAUAAwAAAALAAMAAAAUAAsAAAALAAIAAAAUAAoAAAALAAA
 tile_set = ExtResource("3_um320")
 
 [node name="Player" parent="." unique_id=1691389058 instance=ExtResource("4_glw47")]
-position = Vector2(416, 480)
+position = Vector2(480, 512)
 
 [node name="Unmashed" parent="." unique_id=1096808338 instance=ExtResource("5_4wsov")]
 position = Vector2(160, 352)
@@ -35,7 +35,7 @@ position = Vector2(160, 448)
 mash_type = 3
 
 [node name="Unmashed3" parent="." unique_id=1901000234 instance=ExtResource("5_4wsov")]
-position = Vector2(320, 608)
+position = Vector2(384, 608)
 mash_type = 100
 
 [node name="OrderChecker" parent="." unique_id=516939924 instance=ExtResource("6_qvnao")]

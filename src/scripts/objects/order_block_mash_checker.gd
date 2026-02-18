@@ -23,16 +23,16 @@ func check_satisfaction() -> bool: # Ok -> O(1), worst case -> O(n)
 	var value: bool = false
 	var areas: Array[Area2D] = get_overlapping_areas()
 
-	print("")
-	print_debug(self)
-	print_debug(what_im_happy_with)
-	print_debug(areas)
+	#print("")
+	#print_debug(self)
+	#print_debug(what_im_happy_with)
+	#print_debug(areas)
 
 	if areas.size() == 1 && areas[0] is MashBlock:
-		print_debug((areas[0] as MashBlock).mash_type)
+		#print_debug((areas[0] as MashBlock).mash_type)
 		
 		value = (areas[0] as MashBlock).is_match(what_im_happy_with)
 	
-	print_debug(value)
+	#print_debug(value)
 	
 	return value
