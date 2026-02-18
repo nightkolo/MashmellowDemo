@@ -29,7 +29,8 @@
   - [x] 1-3
   - [x] Cherry bomb fixing
   - [x] 1-4
-  - [ ] See how much you can develop (see priv/levels.md)
+  - [x] See how much you can develop (see priv/levels.md)
+- [ ] Code refactor/clean-up
 
 ### Core
 
@@ -60,14 +61,15 @@
   - [x] Idle (Mashed)
   - [x] Sleep (Unmashed, darken)
 
-### For later
+## Roadmap
 
+### Assets and design
 - [ ] NPC, design, dialog
-- [ ] Character
+- [ ] NPC Character
+  - [ ] Name
   - [ ] Design
   - [ ] Dialogue
   - [ ] Purpose
-- [ ] Interface
 - [x] Eyes
   - [ ] Happy
 - [ ] TileMap
@@ -76,17 +78,22 @@
     - [ ] Collision Layer (visible = false)
     - [ ] TM1
     - [ ] TM2
-    - [ ] Background
+  - [ ] Background tiles
   - [x] Colored for worlds
   - [ ] Deco
 - [ ] Paper
+  - [ ] Star marshmellow
+    - [ ] Base
+    - [ ] Bright
+  - [ ] Proper mini blocks
+- [ ] Interface (WIP)
 
 ### Project (WIP)
 
 - [ ] Menus
 
 
-## 2-8
+## 2-8 (Legacy, complete)
 
 ### Gameplay code
 
