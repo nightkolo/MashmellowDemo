@@ -26,7 +26,7 @@ func _ready() -> void:
 	game_end.connect(goto_next_level)
 		
 	game_reset.connect(func():
-		#GameLogic.self_destruct()
+		GameLogic.reset_game_logic()
 		get_tree().reload_current_scene()
 		)
 
@@ -34,6 +34,8 @@ func _ready() -> void:
 func goto_next_level() -> void:
 	if !current_level:
 		return
+	
+	GameLogic.reset_game_logic()
 	
 	var next_lvl_id := current_level.scene_file_path.to_int() + 1
 	var next_lvl_path := Util.LEVEL_FILE_BEGIN + str(next_lvl_id) + Util.LEVEL_FILE_END

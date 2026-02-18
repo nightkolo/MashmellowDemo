@@ -27,8 +27,7 @@
     - [x] Fix anim
 - [x] Work on levels
   - [x] 1-3
-  - [ ] Cherry bomb fixing
-    - [ ] Use area2D to prevent 
+  - [x] Cherry bomb fixing
   - [ ] 1-4
   - [ ] See how much you can develop (see priv/levels.md)
 

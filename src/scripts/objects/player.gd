@@ -113,25 +113,16 @@ func unmash() -> void: ## Ok -> O(1)
 			
 			var push_to: Vector2
 			
-			# TODO: Fix raycast bug, bye bye im done
-			# Issue appears because raycasts are children of the thing they're trying to colliding
-			# Solution #1: Area2D
-			
 			for ray: RayCast2D in old_mashed.block_detect.cherry_bomb_rays:
 				ray.force_raycast_update()
-				print_debug(ray)
-				print_debug(ray.is_colliding())
-				print_debug(ray.get_collider())
-				#print_debug(ray.get_overlapping_bodies())
-				#print_debug(ray.get_overlapping_areas())
+				#print_debug(ray)
+				#print_debug(ray.is_colliding())
+				#print_debug(ray.get_collider())
 				
 				if ray.get_collider() is Player:
 					push_to = -ray.target_position.sign()
-			#
-			#if push_to == Vector2.ZERO:
-				#push_to = Vector2.DOWN
 			
-			print_debug(push_to)
+			#print_debug(push_to)
 			
 			if push_to.y > push_to.x && velocity.y > 0:
 				velocity.y = 0.0
