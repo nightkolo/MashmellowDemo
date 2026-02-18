@@ -28,7 +28,7 @@
 - [x] Work on levels
   - [x] 1-3
   - [x] Cherry bomb fixing
-  - [ ] 1-4
+  - [x] 1-4
   - [ ] See how much you can develop (see priv/levels.md)
 
 ### Core
@@ -38,13 +38,16 @@
 - [x] Set 1x2 blocks
 - [x] Add eye sprites
 - [x] Improved order task presentation
-- [ ] Test and fix order task
-  - [ ] 1x2 test
-- [ ] Structure order complete anim
+- [x] Test and fix order task
+  - [x] 1x2 test
+- [x] Structure order complete anim
 
 ### Assets and Design (64/128 Block size)
-- [ ] BG (Moving checkerboard)
-- [ ] Marshmellow block
+- [ ] Mechanics
+  - [x] Doors
+  - [ ] Switch
+- [x] BG (Moving checkerboard)
+- [x] Marshmellow block
   - [x] Player
   - [x] White
   - [x] Golden
@@ -56,10 +59,17 @@
 - [x] Eyes
   - [x] Idle (Mashed)
   - [x] Sleep (Unmashed, darken)
-  - [ ] Happy
 
 ### For later
 
+- [ ] NPC, design, dialog
+- [ ] Character
+  - [ ] Design
+  - [ ] Dialogue
+  - [ ] Purpose
+- [ ] Interface
+- [x] Eyes
+  - [ ] Happy
 - [ ] TileMap
   - [x] Basic Block (for beta, colored for worlds)
   - [ ] Seperated Tilemaps
@@ -70,15 +80,10 @@
   - [x] Colored for worlds
   - [ ] Deco
 - [ ] Paper
-- [ ] Mechanics
-  - [x] Doors
-  - [ ] Switch
-- [ ] NPC, design, dialog
-- [ ] Character
-  - [ ] Design
-  - [ ] Dialogue
-  - [ ] Purpose
-- [ ] Interface
+
+### Project (WIP)
+
+- [ ] Menus
 
 
 ## 2-8

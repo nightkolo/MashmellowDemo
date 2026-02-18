@@ -36,6 +36,10 @@ position = Vector2(736, 608)
 position = Vector2(224, 544)
 mash_type = 1
 
+[node name="Unmashed5" parent="." unique_id=722359143 instance=ExtResource("5_4wsov")]
+position = Vector2(1120, 160)
+mash_type = 1
+
 [node name="Unmashed3" parent="." unique_id=1901000234 instance=ExtResource("5_4wsov")]
 position = Vector2(608, 672)
 mash_type = 100

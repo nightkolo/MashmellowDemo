@@ -34,7 +34,7 @@ var new_child_blocks: Array[Mashed] # Stack data structure
 
 var is_landed: bool
 
-const CHERRY_BOMB_STRENGTH = 3200.0
+const CHERRY_BOMB_STRENGTH = 1600.0
 
 var _pos_before_mash: Vector2
 var _has_mashed: bool
@@ -88,7 +88,7 @@ func get_unmashed_object(type: Util.BuildType) -> Unmashed:
 			
 
 func mash_child_blocks() -> void: ## Ok -> O(n)
-	if child_blocks[-1].mash_type == Util.MashType.CHERRY_BOMB:
+	if !can_perform_mash():
 		return
 	
 	var blocks: Array[Mashed] = child_blocks.duplicate(true) # To avoid infinite recursion
@@ -104,25 +104,46 @@ func unmash() -> void: ## Ok -> O(1)
 	
 	GameLogic.player_unmashed.emit()
 	
-	var old_mashed: Mashed = child_blocks.pop_back()
+	var old_mashed: Mashed = child_blocks[-1]
 	_pos_before_mash = position
+	
+	# TODO: Refactor and clean up, Move cherry_bomb into its own function
+	# Analyze and clean up logic
 	
 	match old_mashed.mash_type:
 		Util.MashType.CHERRY_BOMB:
+			if !is_on_floor():
+				return
+			
+			child_blocks.pop_back()
+			
 			cherry_bomb_activated.emit()
 			
 			var push_to: Vector2
 			
 			for ray: RayCast2D in old_mashed.block_detect.cherry_bomb_rays:
 				ray.force_raycast_update()
-				#print_debug(ray)
-				#print_debug(ray.is_colliding())
-				#print_debug(ray.get_collider())
-				
 				if ray.get_collider() is Player:
 					push_to = -ray.target_position.sign()
 			
-			#print_debug(push_to)
+			if push_to.y > push_to.x && velocity.y > 0:
+				velocity.y = 0.0
+				
+			velocity += -push_to * CHERRY_BOMB_STRENGTH
+			
+			old_mashed.queue_free()
+		
+		Util.MashType.AIR_CHERRY_BOMB:
+			cherry_bomb_activated.emit()
+			
+			child_blocks.pop_back()
+			
+			var push_to: Vector2
+			
+			for ray: RayCast2D in old_mashed.block_detect.cherry_bomb_rays:
+				ray.force_raycast_update()
+				if ray.get_collider() is Player:
+					push_to = -ray.target_position.sign()
 			
 			if push_to.y > push_to.x && velocity.y > 0:
 				velocity.y = 0.0
@@ -132,6 +153,11 @@ func unmash() -> void: ## Ok -> O(1)
 			old_mashed.queue_free()
 			
 		_:
+			if !is_on_floor():
+				return
+			
+			child_blocks.pop_back()
+			
 			var unmashed: Unmashed = get_unmashed_object(old_mashed.build_type)
 					
 			unmashed.global_position = old_mashed.global_position
@@ -147,6 +173,10 @@ func is_being_flown() -> bool:
 	return cherry_bomb_air_timer.time_left > 0.0
 
 
+func can_perform_mash() -> bool:
+	return !(child_blocks[-1].mash_type == Util.MashType.CHERRY_BOMB || child_blocks[-1].mash_type == Util.MashType.AIR_CHERRY_BOMB)
+
+
 func can_mash() -> bool:
 	for block: Mashed in child_blocks:
 		if block.block_detect.is_colliding():
@@ -155,7 +185,7 @@ func can_mash() -> bool:
 	
 		
 func can_unmash() -> bool:
-	return child_blocks.size() > 1 && is_on_floor()
+	return child_blocks.size() > 1
 
 
 func return_position() -> void:

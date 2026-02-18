@@ -7,7 +7,8 @@ enum MashType {
 	CHOCO = 2,
 	BISCUIT = 3,
 	PLAYER = 99,
-	CHERRY_BOMB = 100
+	CHERRY_BOMB = 100,
+	AIR_CHERRY_BOMB = 101
 }
 enum SpecialMashType { ## @deprecated
 	REGULAR = 0,
@@ -84,7 +85,7 @@ static func get_mash_type_texture(type: MashType, build: BuildType) -> Texture2D
 		MashType.PLAYER:
 			text = preload("res://assets/objects/block-player-01.png")
 			
-		MashType.CHERRY_BOMB:
+		MashType.CHERRY_BOMB, MashType.AIR_CHERRY_BOMB:
 			text = preload("res://assets/objects/block-cherry-bomb-01.png")
 			
 	return text
