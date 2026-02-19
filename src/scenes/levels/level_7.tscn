@@ -9,11 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://yivkpt02m4ox" path="res://scenes/game/mash_block_checker.tscn" id="8_dfn7m"]
 [ext_resource type="Script" uid="uid://dj330fftlpvf6" path="res://scripts/objects/switch.gd" id="8_sjq8i"]
 [ext_resource type="Script" uid="uid://b3cwwpsrywrrm" path="res://scripts/objects/door.gd" id="9_q0wsq"]
+[ext_resource type="PackedScene" uid="uid://c2otvdkeaywff" path="res://scenes/objects/door_block.tscn" id="10_q0wsq"]
+
+[sub_resource type="Gradient" id="Gradient_sjq8i"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q0wsq"]
+gradient = SubResource("Gradient_sjq8i")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivh0c"]
-size = Vector2(64, 64)
 
 [node name="Level" type="Node2D" unique_id=2026468441]
 script = ExtResource("1_posk4")
@@ -43,6 +46,33 @@ what_im_happy_with = 1
 position = Vector2(128, 0)
 what_im_happy_with = 0
 
+[node name="Switch" type="Area2D" parent="." unique_id=457093512 node_paths=PackedStringArray("door_to_interact_with")]
+position = Vector2(416, 576)
+collision_layer = 0
+collision_mask = 10
+script = ExtResource("8_sjq8i")
+door_to_interact_with = NodePath("../Door")
+metadata/_custom_type_script = "uid://dj330fftlpvf6"
+
+[node name="Sprite2D" type="Sprite2D" parent="Switch" unique_id=998991269]
+texture = SubResource("GradientTexture2D_q0wsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Switch" unique_id=780724582]
+shape = SubResource("RectangleShape2D_sjq8i")
+
+[node name="Door" type="StaticBody2D" parent="." unique_id=2000513942]
+position = Vector2(704, 416)
+script = ExtResource("9_q0wsq")
+metadata/_custom_type_script = "uid://b3cwwpsrywrrm"
+
+[node name="DoorBlock" parent="Door" unique_id=1732091715 instance=ExtResource("10_q0wsq")]
+
+[node name="DoorBlock2" parent="Door" unique_id=1988321818 instance=ExtResource("10_q0wsq")]
+position = Vector2(0, 64)
+
+[node name="DoorBlock3" parent="Door" unique_id=1808321185 instance=ExtResource("10_q0wsq")]
+position = Vector2(0, 128)
+
 [node name="Player" parent="." unique_id=1691389058 instance=ExtResource("4_ivh0c")]
 position = Vector2(480, 480)
 
@@ -55,30 +85,3 @@ position = Vector2(992, 544)
 
 [node name="Unmashed3" parent="." unique_id=2092240125 instance=ExtResource("5_wreli")]
 position = Vector2(1184, 384)
-
-[node name="Switch" type="Area2D" parent="." unique_id=457093512 node_paths=PackedStringArray("door_to_interact_with")]
-position = Vector2(416, 576)
-collision_layer = 0
-collision_mask = 10
-script = ExtResource("8_sjq8i")
-door_to_interact_with = NodePath("../Door")
-metadata/_custom_type_script = "uid://dj330fftlpvf6"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Switch" unique_id=780724582]
-shape = SubResource("RectangleShape2D_sjq8i")
-
-[node name="Door" type="StaticBody2D" parent="." unique_id=2000513942]
-position = Vector2(704, 416)
-script = ExtResource("9_q0wsq")
-metadata/_custom_type_script = "uid://b3cwwpsrywrrm"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=234879105]
-shape = SubResource("RectangleShape2D_ivh0c")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Door" unique_id=1862065172]
-position = Vector2(0, 64)
-shape = SubResource("RectangleShape2D_ivh0c")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Door" unique_id=1286689352]
-position = Vector2(0, 128)
-shape = SubResource("RectangleShape2D_ivh0c")

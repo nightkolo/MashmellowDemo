@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2otvdkeaywff"]
+
+[ext_resource type="Script" uid="uid://df6x4rle15ggl" path="res://scripts/objects/obj_door_block.gd" id="1_4ro5p"]
+[ext_resource type="Texture2D" uid="uid://go8uyqlyu4om" path="res://assets/objects/switch-block-01.png" id="2_qwysj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivh0c"]
+size = Vector2(64, 64)
+
+[node name="DoorBlock" type="CollisionShape2D" unique_id=1732091715]
+shape = SubResource("RectangleShape2D_ivh0c")
+script = ExtResource("1_4ro5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597353883]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qwysj")
