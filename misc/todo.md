@@ -1,6 +1,57 @@
 # Todo
 
-## 2-12
+## 2-20
+
+### Assets and design
+- [ ] NPC, design, dialog
+- [ ] NPC Character
+  - [x] Name
+  - [ ] Design
+  - [ ] Dialogue
+  - [ ] Purpose
+- [x] Eyes
+  - [ ] Happy
+- [ ] TileMap
+  - [x] Basic Block (for beta, colored for worlds)
+  - [ ] Seperated Tilemaps
+    - [ ] Collision Layer (visible = false)
+    - [ ] TM1
+    - [ ] TM2
+  - [ ] Background tiles
+  - [x] Colored for worlds
+  - [ ] Deco
+- [ ] Mechanics
+  - [x] Doors
+  - [ ] Switch
+- [ ] Paper
+  - [ ] Star marshmellow
+    - [ ] Base
+    - [ ] Bright
+  - [ ] Proper mini blocks
+- [ ] Interface (WIP)
+
+### Project (WIP)
+
+- [ ] Menus
+
+### Gameplay code
+
+- [ ] Improved game juice
+  - [x] Mash highlighters
+  - [ ] Unmashable highlighter
+  - [ ] Mashed/Unmashed state
+  - [ ] Animations fixes
+
+## Roadmap
+
+### Animation
+
+- [ ] Blocks
+  - [ ] Sleeping
+  - [ ] Attached
+
+
+## 2-12 (Legacy)
 
 ### Set up
 
@@ -60,38 +111,6 @@
 - [x] Eyes
   - [x] Idle (Mashed)
   - [x] Sleep (Unmashed, darken)
-
-## Roadmap
-
-### Assets and design
-- [ ] NPC, design, dialog
-- [ ] NPC Character
-  - [ ] Name
-  - [ ] Design
-  - [ ] Dialogue
-  - [ ] Purpose
-- [x] Eyes
-  - [ ] Happy
-- [ ] TileMap
-  - [x] Basic Block (for beta, colored for worlds)
-  - [ ] Seperated Tilemaps
-    - [ ] Collision Layer (visible = false)
-    - [ ] TM1
-    - [ ] TM2
-  - [ ] Background tiles
-  - [x] Colored for worlds
-  - [ ] Deco
-- [ ] Paper
-  - [ ] Star marshmellow
-    - [ ] Base
-    - [ ] Bright
-  - [ ] Proper mini blocks
-- [ ] Interface (WIP)
-
-### Project (WIP)
-
-- [ ] Menus
-
 
 ## 2-8 (Legacy, complete)
 
