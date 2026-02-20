@@ -20,19 +20,24 @@
     - [ ] Deco Block
   - [x] Background tiles
   - [x] Colored for worlds
-- [ ] Mechanics
+- [x] Mechanics
   - [x] Doors
-  - [ ] Switch
-- [ ] Paper
-  - [ ] Star marshmellow
-    - [ ] Base
-    - [ ] Bright
-  - [ ] Proper mini blocks
+  - [x] Switch  
+- [x] Paper
+  - [x] Star marshmellow
+    - [x] Base
+    - [x] Bright
+  - [x] Proper mini blocks
 - [ ] Interface (WIP)
 
-### Project (WIP)
+### Project
 
 - [ ] Menus
+  - [ ] Start Screen
+  - [ ] Title
+  - [ ] Options
+  - [ ] Level Select
+  - [ ] Pause Menu
 
 ### Gameplay code
 
@@ -46,6 +51,7 @@
 
 ### Animation
 
+- [ ] Intro Sequence
 - [ ] Blocks
   - [ ] Sleeping
   - [ ] Attached

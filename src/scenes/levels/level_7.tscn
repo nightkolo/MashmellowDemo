@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bvjtkxteylojf" path="res://scenes/game/order_checker.tscn" id="7_st48t"]
 [ext_resource type="PackedScene" uid="uid://yivkpt02m4ox" path="res://scenes/game/mash_block_checker.tscn" id="8_dfn7m"]
 [ext_resource type="Script" uid="uid://dj330fftlpvf6" path="res://scripts/objects/switch.gd" id="8_sjq8i"]
+[ext_resource type="Texture2D" uid="uid://34wayfvqlvrp" path="res://assets/interface/order-star-01.png" id="8_ymk4h"]
 [ext_resource type="Script" uid="uid://b3cwwpsrywrrm" path="res://scripts/objects/door.gd" id="9_q0wsq"]
+[ext_resource type="Texture2D" uid="uid://cex7p2po0vf0o" path="res://assets/interface/order-star-03.png" id="9_st48t"]
 [ext_resource type="PackedScene" uid="uid://c2otvdkeaywff" path="res://scenes/objects/door_block.tscn" id="10_q0wsq"]
 
 [sub_resource type="Gradient" id="Gradient_sjq8i"]
@@ -61,6 +63,18 @@ what_im_happy_with = 1
 [node name="MashBlockChecker3" parent="World/OrderChecker" unique_id=1713969590 instance=ExtResource("8_dfn7m")]
 position = Vector2(128, 0)
 what_im_happy_with = 0
+
+[node name="OrderStar01" type="Sprite2D" parent="World" unique_id=629910699]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(736, 672)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_ymk4h")
+
+[node name="OrderStar03" type="Sprite2D" parent="World" unique_id=1706385499]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(640, 672)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_st48t")
 
 [node name="Switch" type="Area2D" parent="." unique_id=457093512 node_paths=PackedStringArray("door_to_interact_with")]
 position = Vector2(416, 576)
