@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl0u0p0mf5g16"]
 
 [ext_resource type="Script" uid="uid://b1852451nlht1" path="res://scripts/world/level_world.gd" id="1_3o8b6"]
-[ext_resource type="Texture2D" uid="uid://ctdlvfu6pkyu0" path="res://assets/bg/bg-main-01.png" id="2_rlf5l"]
+[ext_resource type="Texture2D" uid="uid://csod3gvq84pq" path="res://assets/bg/bg-01.png" id="2_3o8b6"]
 
 [node name="World" type="Node2D" unique_id=1317599791]
 script = ExtResource("1_3o8b6")
@@ -12,5 +12,5 @@ bg_speed = 2.5
 [node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=98895027]
 self_modulate = Color(1, 1, 0.56, 1)
 position = Vector2(-119.884445, -119.884445)
-texture = ExtResource("2_rlf5l")
+texture = ExtResource("2_3o8b6")
 centered = false

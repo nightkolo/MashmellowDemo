@@ -14,12 +14,12 @@
 - [ ] TileMap
   - [x] Basic Block (for beta, colored for worlds)
   - [ ] Seperated Tilemaps
-    - [ ] Collision Layer (visible = false)
-    - [ ] TM1
-    - [ ] TM2
+    - [x] Ground
+    - [x] Foreground
+    - [x] Clipped Outline
+    - [ ] Deco Block
   - [ ] Background tiles
   - [x] Colored for worlds
-  - [ ] Deco
 - [ ] Mechanics
   - [x] Doors
   - [ ] Switch
