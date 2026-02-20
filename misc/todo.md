@@ -18,7 +18,7 @@
     - [x] Foreground
     - [x] Clipped Outline
     - [ ] Deco Block
-  - [ ] Background tiles
+  - [x] Background tiles
   - [x] Colored for worlds
 - [ ] Mechanics
   - [x] Doors

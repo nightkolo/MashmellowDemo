@@ -8,6 +8,18 @@ class_name World
 
 @onready var bg_sprite: Sprite2D = $BG/Sprite2D
 
+# World structure
+# > Cam
+# World
+#> TileMaps
+	#> Ground
+	#> Foreground
+	#> Deco
+	#> Sprite2D
+		#> Outline
+#> OrderChecker
+# > Level entites
+
 
 func _ready() -> void:
 	bg_sprite.self_modulate = bg_color
