@@ -64,5 +64,6 @@ mash_type = 1
 
 [node name="Unmashed3" parent="." unique_id=1400545162 instance=ExtResource("6_4u4co")]
 position = Vector2(1088, 384)
+build_type = 0
 
 [editable path="World/LevelGoal"]
