@@ -10,7 +10,7 @@ class_name LevelGoal
 
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
-	level_number_label.text = "1-" + str(GameMgr.current_level_number)
+	level_number_label.text = "Level 1-" + str(GameMgr.current_level_number)
 	
 	level_number_label.position = Vector2(-level_number_label.size.x / 2, 0.0)
 	

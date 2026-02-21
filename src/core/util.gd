@@ -29,7 +29,7 @@ const LEVEL_FILE_END = ".tscn"
 const BLOCK_SIZE = 64.0
 const GRAVITY_MULT = 4.0
 
-static func get_block_mash_type_texture(type: MashType) -> Texture2D:
+static func get_block_mash_type_texture(type: MashType, build: BuildType) -> Texture2D:
 	var text: Texture2D
 	
 	match type:

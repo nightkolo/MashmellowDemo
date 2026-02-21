@@ -62,7 +62,7 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 	
 	
 func setup_mash_block(sprite: Sprite2D, type: Util.MashType, build: Util.BuildType = Util.BuildType.SQUARE) -> void:
-	sprite.texture = Util.get_block_mash_type_texture(type)
+	sprite.texture = Util.get_block_mash_type_texture(type, build)
 	
 
 func setup_mash(

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dm2w7x53dr4sx"]
+[gd_scene format=3 uid="uid://d0vppcbyly4dg"]
 
 [ext_resource type="Script" uid="uid://ckhbrrhb6bpm7" path="res://scripts/game/mash_block_checker_id.gd" id="1_8ye5c"]
 [ext_resource type="Texture2D" uid="uid://bwb4n1248t4ub" path="res://assets/interface/block-order-player-02.png" id="2_6kb7f"]
