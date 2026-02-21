@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0vppcbyly4dg"]
+
+[ext_resource type="Script" uid="uid://ckhbrrhb6bpm7" path="res://scripts/game/mash_block_checker_id.gd" id="1_8ye5c"]
+[ext_resource type="Texture2D" uid="uid://bwb4n1248t4ub" path="res://assets/interface/block-order-player-02.png" id="2_6kb7f"]
+
+[node name="MashBlockCheckerID" type="Node2D" unique_id=491390326]
+script = ExtResource("1_8ye5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866372142]
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("2_6kb7f")

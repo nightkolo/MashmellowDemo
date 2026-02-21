@@ -5,7 +5,7 @@ signal switch_activated(is_on: bool)
 
 @export var door_to_interact_with: Door
 
-@onready var sprite: Sprite2D = $Sprite2D ## Placeholder
+@onready var sprite_base: Sprite2D = $Base ## Placeholder
 
 var is_activated: bool
 

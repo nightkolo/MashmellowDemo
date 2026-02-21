@@ -19,6 +19,7 @@
     - [x] Clipped Outline
     - [ ] Deco Block
   - [x] Background tiles
+    - [ ] Change tile to avoid repeativeness
   - [x] Colored for worlds
 - [x] Mechanics
   - [x] Doors
@@ -28,7 +29,22 @@
     - [x] Base
     - [x] Bright
   - [x] Proper mini blocks
+    - [ ] 1x2 blocks
 - [ ] Interface (WIP)
+
+### Gameplay code
+- [x] Switch sprites
+- [ ] Order Paper
+  - [ ] Add mini blocks
+    - [ ] Analyze fix scaling
+    - [ ] 1x2 sized
+  - [x] Fix presentation
+  - [x] Add Star interface
+- [ ] Improved game juice
+  - [x] Mash highlighters
+  - [ ] Unmashable highlighter
+  - [ ] Mashed/Unmashed state
+  - [ ] Animations fixes
 
 ### Project
 
@@ -39,14 +55,6 @@
   - [ ] Level Select
   - [ ] Pause Menu
 
-### Gameplay code
-
-- [ ] Improved game juice
-  - [x] Mash highlighters
-  - [ ] Unmashable highlighter
-  - [ ] Mashed/Unmashed state
-  - [ ] Animations fixes
-
 ## Roadmap
 
 ### Animation
@@ -55,6 +63,9 @@
 - [ ] Blocks
   - [ ] Sleeping
   - [ ] Attached
+- [ ] Objects
+  - [ ] Switch/Doors
+    - [ ] Copy-paste some old animation code (yeah, I'm lazy)
 
 
 ## 2-12 (Legacy)

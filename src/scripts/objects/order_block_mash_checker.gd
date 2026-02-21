@@ -3,13 +3,11 @@ extends Area2D
 class_name MashBlockChecker
 
 @export var what_im_happy_with: Util.MashType
-
-#@onready var sprite: Sprite2D = $Icon
-@onready var sprite: Sprite2D = $Sprite2D
+@export var what_im_built_like: Util.BuildType
 
 
 func _ready() -> void:
-	GameLogic.setup_mash_block(sprite, what_im_happy_with)
+	#GameLogic.setup_mash_block(sprite, what_im_happy_with, what_im_built_like)
 	
 	if get_parent() is OrderChecker:
 		(get_parent() as OrderChecker).order_blocks.append(self)

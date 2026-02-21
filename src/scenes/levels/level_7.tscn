@@ -9,18 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bn6154eu6l5ce" path="res://scenes/objects/block_unmashed_1x1.tscn" id="5_wreli"]
 [ext_resource type="PackedScene" uid="uid://bvjtkxteylojf" path="res://scenes/game/order_checker.tscn" id="7_st48t"]
 [ext_resource type="PackedScene" uid="uid://yivkpt02m4ox" path="res://scenes/game/mash_block_checker.tscn" id="8_dfn7m"]
-[ext_resource type="Script" uid="uid://dj330fftlpvf6" path="res://scripts/objects/switch.gd" id="8_sjq8i"]
 [ext_resource type="Texture2D" uid="uid://34wayfvqlvrp" path="res://assets/interface/order-star-01.png" id="8_ymk4h"]
 [ext_resource type="Script" uid="uid://b3cwwpsrywrrm" path="res://scripts/objects/door.gd" id="9_q0wsq"]
 [ext_resource type="Texture2D" uid="uid://cex7p2po0vf0o" path="res://assets/interface/order-star-03.png" id="9_st48t"]
 [ext_resource type="PackedScene" uid="uid://c2otvdkeaywff" path="res://scenes/objects/door_block.tscn" id="10_q0wsq"]
-
-[sub_resource type="Gradient" id="Gradient_sjq8i"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_q0wsq"]
-gradient = SubResource("Gradient_sjq8i")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjq8i"]
+[ext_resource type="PackedScene" uid="uid://djgv45k3n5ibr" path="res://scenes/objects/obj_switch.tscn" id="10_st48t"]
 
 [node name="Level" type="Node2D" unique_id=2026468441]
 script = ExtResource("1_posk4")
@@ -76,19 +69,9 @@ position = Vector2(640, 672)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_st48t")
 
-[node name="Switch" type="Area2D" parent="." unique_id=457093512 node_paths=PackedStringArray("door_to_interact_with")]
+[node name="Switch" parent="." unique_id=267643424 node_paths=PackedStringArray("door_to_interact_with") instance=ExtResource("10_st48t")]
 position = Vector2(416, 576)
-collision_layer = 0
-collision_mask = 10
-script = ExtResource("8_sjq8i")
 door_to_interact_with = NodePath("../Door")
-metadata/_custom_type_script = "uid://dj330fftlpvf6"
-
-[node name="Sprite2D" type="Sprite2D" parent="Switch" unique_id=998991269]
-texture = SubResource("GradientTexture2D_q0wsq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Switch" unique_id=780724582]
-shape = SubResource("RectangleShape2D_sjq8i")
 
 [node name="Door" type="StaticBody2D" parent="." unique_id=2000513942]
 position = Vector2(704, 416)

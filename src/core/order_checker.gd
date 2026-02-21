@@ -4,18 +4,11 @@ class_name OrderChecker
 
 var order_blocks: Array[Node]
 
-@onready var label: Label = $Label
-
 
 func _ready() -> void:
+	visible = false
+	
 	GameMgr.current_order_checker = self
-	
-	#order_blocks = get_children()
-	
-	await get_tree().create_timer(0.1).timeout
-	label.text = "1-" + str(GameMgr.current_level_number)
-	
-	print(order_blocks)
 
 
 func check_satisfaction() -> bool: # Ok -> O(n), Worst case -> O(n^2)

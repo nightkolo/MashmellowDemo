@@ -19,12 +19,6 @@ func reset_game_logic() -> void:
 
 
 func _ready() -> void:
-	# (complete?) TODO: Move OrderCheck to player pos
-	# Check Area2Ds,
-	# if all mash_type(s) match,
-	# emit() -> order_complete and order_checked
-	# if not matching,
-	# emit() -> order_checked
 	player_mashed.connect(check_order_completion)
 
 	player_unmashed.connect(check_order_completion)
@@ -32,7 +26,7 @@ func _ready() -> void:
 	order_checked.connect(func():
 		is_checking_order_match = false
 		
-		GameMgr.current_order_checker.position = _order_check_ori_pos
+		GameMgr.current_order_checker.global_position = _order_check_ori_pos
 		)
 	
 	order_complete.connect(func():
@@ -41,7 +35,8 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(0.1).timeout
 	
-	_order_check_ori_pos = GameMgr.current_order_checker.position
+	if GameMgr.current_order_checker:
+		_order_check_ori_pos = GameMgr.current_order_checker.global_position
 
 
 func order_met() -> void:
@@ -54,7 +49,7 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 		return
 	
 	is_checking_order_match = true
-	GameMgr.current_order_checker.position = GameMgr.current_player.position
+	GameMgr.current_order_checker.global_position = GameMgr.current_player.position
 	
 	await get_tree().create_timer(0.05).timeout
 	
@@ -66,7 +61,7 @@ func check_order_completion() -> void: # Ok -> O(n), Worst case -> O(n^2)
 	order_checked.emit()
 	
 	
-func setup_mash_block(sprite: Sprite2D, type: Util.MashType) -> void:
+func setup_mash_block(sprite: Sprite2D, type: Util.MashType, build: Util.BuildType = Util.BuildType.SQUARE) -> void:
 	sprite.texture = Util.get_block_mash_type_texture(type)
 	
 
