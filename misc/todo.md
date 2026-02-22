@@ -6,20 +6,20 @@
 - [ ] NPC, design, dialog
 - [ ] NPC Character
   - [x] Name
-  - [ ] Design
-  - [ ] Dialogue
-  - [ ] Purpose
+  - [ ] **Design**
+  - [ ] **Dialogue**
+  - [ ] **Purpose**
 - [x] Eyes
-  - [ ] Happy
+  - [ ] **Happy**
 - [ ] TileMap
   - [x] Basic Block (for beta, colored for worlds)
   - [ ] Seperated Tilemaps
     - [x] Ground
     - [x] Foreground
     - [x] Clipped Outline
-    - [ ] Deco Block
+    - [ ] **Deco Block**
   - [x] Background tiles
-    - [ ] Change tile to avoid repeativeness
+    - [ ] **Change tile to avoid repeativeness**
   - [x] Colored for worlds
 - [x] Mechanics
   - [x] Doors
@@ -29,7 +29,8 @@
     - [x] Base
     - [x] Bright
   - [x] Proper mini blocks
-    - [ ] 1x2 blocks
+    - [ ] **1x2 blocks**
+  - [ ] **Mash highlighter**
 - [ ] Interface (WIP)
 
 ### Gameplay code
@@ -63,6 +64,10 @@
 - [ ] Blocks
   - [ ] Sleeping
   - [ ] Attached
+  - [ ] Particles
+    - [ ] Jumping
+    - [ ] Lnading
+  - [ ] Trails
 - [ ] Objects
   - [ ] Switch/Doors
     - [ ] Copy-paste some old animation code (yeah, I'm lazy)
