@@ -36,11 +36,11 @@
 ### Gameplay code
 - [x] Switch sprites
 - [ ] Order Paper
+  - [x] Fix presentation
+  - [x] Add Star interface
   - [ ] Add mini blocks
     - [ ] Analyze fix scaling
     - [ ] 1x2 sized
-  - [x] Fix presentation
-  - [x] Add Star interface
 - [ ] Improved game juice
   - [x] Mash highlighters
   - [ ] Unmashable highlighter
